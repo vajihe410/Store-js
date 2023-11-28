@@ -1,3 +1,4 @@
+import { authHandeler } from "./utils/authorization.js"
 import { setCookie } from "./utils/cookie.js"
 import { postData } from "./utils/httpRequest.js"
 
@@ -16,4 +17,6 @@ const submitHandeler = async (event) =>{
     location.assign("index.html")
 } 
 
+
 submitButton.addEventListener("click" , submitHandeler)            
+document.addEventListener("DOMContentLoaded" , authHandeler)
