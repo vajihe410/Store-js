@@ -1,4 +1,6 @@
-import {postData} from "./utils/httpRequest.js"
+import { setCookie } from "./utils/cookie.js"
+import { postData } from "./utils/httpRequest.js"
+
 
 const usernameInput = document.getElementById("username")
 const passwordInput = document.getElementById("password")
@@ -10,7 +12,8 @@ const password = passwordInput.value
 const submitHandeler = async (event) =>{
     event.preventDefault()
     const response = await postData("auth/login",{username , password})
-    console.log(response)
-}
+    setCookie(response.token)
+    location.assign("index.html")
+} 
 
 submitButton.addEventListener("click" , submitHandeler)            
