@@ -1,0 +1,111 @@
+header{
+    margin-top: 30px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header > h3 {
+    color: var(--color-primary);
+    font-size: 1.6rem;
+}
+
+.header a{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: all 0.1s ease-in;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.header a:hover{
+    color: white;
+    background-color: black;
+}
+.header i{
+    margin-left:10px ;
+}
+.search {
+    margin-top: 30px;
+}
+
+.search input{
+    background-color: white;
+    border: 1px solid silver;
+    color: var(--color-primary);
+    outline: none;
+    height: 35px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.search input:focus{
+    border: 2px solid var(--color-primary);
+}
+.search button{
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+}
+.search button:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.container{
+    margin: 50px 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.filters {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height:fit-content;
+    margin-left: 20px;
+}
+.filters div{
+    display: flex;
+    color: var(--color-primary); 
+    width: 200px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.filters div p{
+    margin-left: 20px;
+}
+.filters ul{
+    margin-top: 20px;
+    list-style-type: none;
+}
+.filters li {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+.filters li:hover{
+    color: var(--color-primary);
+}
+
+.selected{
+    background-color: var(--color-secondary);
+    color:var(--color-primary);
+    padding: 10px;
+    border-radius: 5px;
+}
