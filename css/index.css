@@ -109,3 +109,64 @@ header{
     padding: 10px;
     border-radius: 5px;
 }
+.products{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.product{
+    background-color: white;
+    width: 250px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.product #rate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product #rateStar{
+    color: var(--color-warning);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: var(--color-background);
+    padding: 5px;
+}
+.product #rateUser{
+    color: var(--color-error);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: var(--color-background);
+    padding: 5px;
+}
+
+
+.product img{
+    width: 220px;
+    height: 220px;
+    margin: 50px 0 40px;
+}
+.product h4{
+    color: var(--color-primary);
+}
+.product #price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 10px;
+}
+.product #price span{
+   color: grey;
+   font-weight: 600;
+}
+.product #price button{
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
