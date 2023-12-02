@@ -3,6 +3,8 @@ import { getData } from "./utils/httpRequest.js"
 import { shortTitle } from "./utils/stringFunction.js"
 
 let allProducts = null;
+let category = "all";
+let search = "";
 
 const loginButton = document.getElementById("login")
 const dashboardButton = document.getElementById("dashboard")
@@ -46,21 +48,23 @@ const initHandeler = async () => {
     
     showProducts(allProducts) 
 }
-
+const filterProducts = () => {
+        const filteredPeoducts = allProducts.filter(product => {
+            if(category === "all"){
+                return product.title.toLowerCase().includes(search)
+            }
+            else{
+                return (product.title.toLowerCase().includes(search) && product.category.toLowerCase() === category)
+            }
+        })
+        showProducts(filteredPeoducts)
+}
 const searchHandeler = () => {
-    
-    const searchValue = searchInput.value.trim().toLowerCase()
-    
-    if(!searchValue) return showProducts(allProducts)
-    
-    const filterProducts = allProducts.filter(product => 
-        product.title.toLowerCase().includes(searchValue)
-    )
-   showProducts(filterProducts)
-    
+    search= searchInput.value.trim().toLowerCase()
+    filterProducts()
 }
 const filterHandeler = (event) => {
-    const category = event.target.innerText.toLowerCase()
+    category = event.target.innerText.toLowerCase()
 
     listItems.forEach(li =>{
         if (li.innerText.toLowerCase() === category){
@@ -70,11 +74,7 @@ const filterHandeler = (event) => {
         li.className = ""
     }
 })
-    
-    if(category === "all") return showProducts(filterProducts)
-    
-   const filterProducts = allProducts.filter(product => product.category.toLowerCase() === category)
-   showProducts(filterProducts)
+    filterProducts()
 }
 
 
