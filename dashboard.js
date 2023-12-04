@@ -2,6 +2,7 @@ import { authHandeler } from "./utils/authorization.js";
 import { getData } from "./utils/httpRequest.js";
 
 const container = document.querySelector(".container")
+const logout = document.querySelector("button")
 
 const renderUsers = (users) => {
     
@@ -41,4 +42,10 @@ const initHandler = async() => {
     const users = await getData("users")
     renderUsers(users)
 }
+const logoutHamdeler = () => {
+    document.cookie = "token=; max-age=0";
+    location.assign("index.html")
+}
+
+logout.addEventListener("click",logoutHamdeler)
 document.addEventListener("DOMContentLoaded",initHandler);
